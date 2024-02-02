@@ -53,25 +53,25 @@ def map_to_color(value):
     else:
         return 'C'
 
-# Input parameters
-input_params = [{"Count": 100}, {"A": 0.6, "B": 0.3, "C": 0.1}]
-colors = {'A': 'grey', 'B': 'black', 'C': 'blue'}
+# # Input parameters
+# input_params = [{"Count": 100}, {"A": 0.6, "B": 0.3, "C": 0.1}]
+# colors = {'A': 'grey', 'B': 'black', 'C': 'blue'}
 
-# Perlin noise generator with increased scale (more noise)
-perlin = Perlin(scale=3.0)  # Adjust the scale factor as needed
+# # Perlin noise generator with increased scale (more noise)
+# perlin = Perlin(scale=3.0)  # Adjust the scale factor as needed
 
-# Probability of having only two color segments in a region
-two_color_prob = 0.18  # Adjust the probability as needed
+# # Probability of having only two color segments in a region
+# two_color_prob = 0.18  # Adjust the probability as needed
 
-# Generate and display a design
-pattern = generate_pattern(input_params, perlin, two_color_prob)
+# # Generate and display a design
+# pattern = generate_pattern(input_params, perlin, two_color_prob)
 
-fig, ax = plt.subplots(figsize=(10, 2))
+# fig, ax = plt.subplots(figsize=(10, 2))
 
-for i, value in enumerate(pattern):
-    category = map_to_color(value)
-    ax.bar(i, 1, color=colors[category])
+# for i, value in enumerate(pattern):
+#     category = map_to_color(value)
+#     ax.bar(i, 1, color=colors[category])
 
-ax.set_xticks([])
-ax.set_yticks([])
-plt.show()
+# ax.set_xticks([])
+# ax.set_yticks([])
+# plt.show()
