@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, jsonify
+from flask import Flask, render_template, request, send_file
 from perlin_weightage_zonal import Perlin, generate_pattern, map_to_color
 import matplotlib.pyplot as plt
 from flaskwebgui import FlaskUI
@@ -92,4 +92,5 @@ def download_pdf():
     return send_file(pdf_data, as_attachment=True, download_name='pattern.pdf', mimetype='application/pdf')
 
 if __name__ == '__main__':
-    ui.run()
+    app.run()
+
