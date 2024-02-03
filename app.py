@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request, send_file
 from perlin_weightage_zonal import Perlin, generate_pattern, map_to_color
 import matplotlib.pyplot as plt
-from flaskwebgui import FlaskUI
+# from flaskwebgui import FlaskUI
 from io import BytesIO
 import json
 from reportlab.pdfgen import canvas
 
 app = Flask(__name__)
 
-ui = FlaskUI(app=app, server="flask",  width=500, height=500) 
+# ui = FlaskUI(app=app, server="flask",  width=500, height=500)
 
 @app.route('/')
 def index():
@@ -92,5 +92,4 @@ def download_pdf():
     return send_file(pdf_data, as_attachment=True, download_name='pattern.pdf', mimetype='application/pdf')
 
 if __name__ == '__main__':
-    app.run()
-    
+    app.run(host='0.0.0.0', port=5000)
