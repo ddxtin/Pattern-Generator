@@ -53,6 +53,8 @@ def map_to_color(value):
     else:
         return 'C'
 
+# Un-comment below code to run this file as a standalone script
+
 # # Input parameters
 # input_params = [{"Count": 100}, {"A": 0.6, "B": 0.3, "C": 0.1}]
 # colors = {'A': 'grey', 'B': 'black', 'C': 'blue'}
