@@ -4,23 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pattern Generator</title>
-    <script>async function getRequest(url = '') {
-        const response = await fetch(url, {
-            method: 'GET',
-            cache: 'no-cache'
-        })
-        return response.json()
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-        let url = document.location
-        let route = "/flaskwebgui-keep-server-alive"
-        let interval_request = 3 * 1000 //sec
-        function keep_alive_server() {
-            getRequest(url + route)
-                .then(data => console.log(data))
-        }
-        setInterval(keep_alive_server, interval_request)()
-    })</script>
 </head>
 <body>
     <h1>Pattern Generator</h1>
@@ -42,16 +25,6 @@
         <input type="text" name="color3" required>
         <label for="weightage3">Weightage:</label>
         <input type="number" name="weightage3" step="0.01" required>
-        <br>
-        <label for="color4">Color 4:</label>
-        <input type="text" name="color4" required>
-        <label for="weightage4">Weightage:</label>
-        <input type="number" name="weightage4" step="0.01" required>
-        <br>
-        <label for="color5">Color 5:</label>
-        <input type="text" name="color5" required>
-        <label for="weightage5">Weightage:</label>
-        <input type="number" name="weightage5" step="0.01" required>
         <br>
         <label for="perlin_scale">Perlin Noise Scale:</label>
         <input type="number" name="perlin_scale" step="0.1" required>

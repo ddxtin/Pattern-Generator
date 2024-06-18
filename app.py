@@ -24,17 +24,13 @@ def generate():
     weightage2 = float(request.form['weightage2'])
     color3 = request.form['color3']
     weightage3 = float(request.form['weightage3'])
-    color4 = request.form['color4']
-    weightage4 = float(request.form['weightage4'])
-    color5 = request.form['color5']
-    weightage5 = float(request.form['weightage5'])
     perlin_scale = float(request.form['perlin_scale'])
     two_color_prob = float(request.form['two_color_prob'])
 
     # Input parameters
-    input_params = [{"Count": strip_count}, {'A': weightage1, 'B': weightage2, 'C': weightage3, 'D': weightage4, 'E': weightage5}]
+    input_params = [{"Count": strip_count}, {'A': weightage1, 'B': weightage2, 'C': weightage3}]
     global colors
-    colors = {'A': color1, 'B': color2, 'C': color3, 'D': color4, 'E': color5}
+    colors = {'A': color1, 'B': color2, 'C': color3}
 
     # Perlin noise generator
     perlin = Perlin(scale=perlin_scale)
@@ -92,4 +88,4 @@ def download_pdf():
     return send_file(pdf_data, as_attachment=True, download_name='pattern.pdf', mimetype='application/pdf')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()#host='0.0.0.0', port=5000)

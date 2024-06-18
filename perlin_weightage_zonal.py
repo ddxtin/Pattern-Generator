@@ -32,6 +32,12 @@ def generate_pattern(params, perlin, two_color_prob):
         x = i / count * 10
         value = perlin.getValue(x)
         result_list.append(value)
+    
+    # for key in params[1].keys():
+    #     value = params[1][key]
+    #     add_amount = int(value * count)
+    #     value = perlin.getValue(add_amount)
+    #     result_list.append(value)
 
     # Normalize values between 0 and 1
     min_val = min(result_list)
